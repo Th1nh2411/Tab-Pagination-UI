@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="fonts/themify-icons-font/themify-icons/themify-icons.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <ul class="tab-list">
+        <li class="tab-item tab-item--active">
+          <i class="ti-basketball"></i>Thể thao
+        </li>
+        <li class="tab-item"><i class="ti-home"></i>Xã hội</li>
+        <li class="tab-item"><i class="ti-book"></i>Pháp luật</li>
+        <li class="tab-item"><i class="ti-world"></i>Môi trường</li>
+        <div class="line"></div>
+      </ul>
+      <div class="content-list">
+        <div class="content-item content-item--active">
+          <h3 class="content-item__title">Có thể bạn không biết</h3>
+          <p class="content-item__text">
+            Các nghiên cứu đã chỉ ra rằng mặt nạ thể thao có thể giảm nguy cơ
+            chấn thương vùng mặt và mắt hơn 90%. Mỗi chiếc mặt nạ đều có lớp lót
+            êm ái phía trong và hệ thống dây đeo linh hoạt để mang lại sự thoải
+            mái cho khuôn mặt. Mặt nạ giúp vừa giảm áp lực trực tiếp lên vùng bị
+            thương trên mặt, vừa khuếch tán các lực tác động ra xung quanh. Lớp
+            bảo vệ này cho phép vận động viên quay lại chơi thể thao sớm hơn,
+            đồng thời giảm nguy cơ bị thương thêm cho vùng mặt và bảo vệ khu vực
+            phẫu thuật.
+          </p>
+        </div>
+        <div class="content-item">
+          <h3 class="content-item__title">
+            Hà Nội: Người đàn ông rơi từ tầng cao khu chung cư thiệt mạng
+          </h3>
+          <p class="content-item__text">
+            Ngày 28/11, lãnh đạo UBND phường Đại Kim (quận Hoàng Mai, Hà Nội)
+            cho biết, lực lượng chức năng đang điều tra nguyên nhân người đàn
+            ông tử vong ở sân chung cư tại khu đô thị Kim Văn - Kim Lũ.
+          </p>
+        </div>
+        <div class="content-item">
+          <h3 class="content-item__title">
+            Ký sự pháp đình: Cái giá của sự ích kỷ
+          </h3>
+          <p class="content-item__text">
+            TPO - Ngày còn bé, Quỳnh Trang đáng yêu, nhu mì, thậm chí có phần
+            yếu đuối. Và đó là lý do tôi không thể lý giải được tại sao lại có
+            một Quỳnh Trang sau này, như mọi người đã biết. Nó nằm ngoài sức
+            tưởng tượng của tôi và nhiều người quen biết. Tội ác Vụ án Nguyễn Võ
+            Quỳnh Trang hành hạ khiến bé gái 8 tuổi con người tình tử vong gây
+            dậy sóng dư luận. Hôm thứ Sáu tuần qua (ngày 25/11), khi phiên tòa
+            xét xử sơ thẩm diễn ra tại TPHCM, rất nhiều người dân đã đến để dõi
+            theo, đồng thời bày tỏ thái độ của mình đối với hành vi tội ác.
+          </p>
+        </div>
+        <div class="content-item">
+          <h3 class="content-item__title">
+            Dọn sạch rác tại biệt thự nguyên chủ tịch TP Hà Nội trả lại 8 năm
+            vẫn bỏ hoang
+          </h3>
+          <p class="content-item__text">
+            TTO - Sau kiến nghị của cử tri và phản ánh của báo chí về việc căn
+            biệt thự số 12 Nguyễn Chế Nghĩa (Hoàn Kiếm) được nguyên chủ tịch Hà
+            Nội trả lại 8 năm nhưng vẫn bị bỏ hoang, rác và cỏ mọc um tùm, UBND
+            phường Hàng Bài đã ra quân dọn rác tại đây.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var $ = document.querySelector.bind(document);
+      var $$ = document.querySelectorAll.bind(document);
+      const tabs = $$(".tab-item");
+      const contents = $$(".content-item");
+      var moveLine = () => {
+        $(".line").style.left = $(".tab-item--active").offsetLeft + "px";
+        $(".line").style.width = $(".tab-item--active").offsetWidth + "px";
+      };
+      moveLine();
+      tabs.forEach((tab, index) => {
+        var content = contents[index];
+        tab.onclick = function () {
+          $(".tab-item.tab-item--active").classList.remove("tab-item--active");
+          $(".content-item.content-item--active").classList.remove(
+            "content-item--active"
+          );
+          content.classList.add("content-item--active");
+          this.classList.add("tab-item--active");
+          moveLine();
+        };
+      });
+    </script>
+  </body>
+</html>
